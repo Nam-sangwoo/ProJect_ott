@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title>커피숍웹사이트 - 게시판 수정하기</title>
+        <script src="../커피숍웹사이트-스마트폰화면-실습/script/jquery-3.7.0.min.js"></script>
+        <script src="./script/login.js"></script>   
+        <script src="./script/emoney.js"></script>
+        <script src="./script/slide.js"></script>
+        <script src="./script/more.js"></script>
+        <link rel="stylesheet" href="css/reset.css"/>	
+        <link rel="stylesheet" href="css/base.css"/>	
+        <link rel="stylesheet" href="css/layout.css"/>	
+        <link rel="stylesheet" href="css/header.css"/>	
+        <link rel="stylesheet" href="css/main.css"/>	
+        <link rel="stylesheet" href="css/login.css"/>	
+</head>
+    
+<body>
+<!-- 전체영역 -->
+<div id="wrap">
+
+<!--로그인시작-->
+		<div id="loginWrap"><!--포지션relative-->
+         <div id="bg"></div><!--콘텐츠를 가려주는 반투명용div-->
+         <div id="modalWrap">
+         
+         <div id="memberLogin"><!--포지션absolute-->
+          
+          <h3 id="tab01"><a href="#" onClick="memberLogin_show(); return false">회원</a></h3>
+          
+           <!--회원로그인 폼시작-->
+           <form onsubmit="login(); return false">
+                <fieldset>
+                   <legend>회원로그인</legend>                    
+                    <p class="userId"><!--label태그는 input에 부여하는 이름표의 역할-->
+                        <label for="userId">아이디</label>
+                        <input  type="text" required placeholder='아이디' title="" class=" " id="userId" />
+                    </p>
+                     <p>
+                        <label for="userPw">비밀번호</label>
+                        <input type="password" required placeholder="비밀번호" id="userPw" />
+                    </p>
+                    <button type="submit">로그인</button>
+                </fieldset>
+           </form>
+           <!--//회원로그인 폼종료-->
+        </div>
+        
+        <div id="guestLogin"><!--포지션absolute-->
+          
+           <h3 id="tab02"><a href="#" onClick="guestLogin_show();return false">비회원주문확인</a></h3>
+           
+           <!--비회원주문화인 로그인 폼시작-->
+           <form onsubmit="guestLogin(); return false">
+               <fieldset>
+                   <legend>비회원주문확인 로그인</legend>
+                    <p class="userId"><!--label태그는 input에 부여하는 이름표의 역할-->
+                        <label for="orderNumber">주문번호</label>
+                        <input type="text" required placeholder='주문번호' id="orderNumber" />
+                    </p>
+                     <p>
+                        <label for="orderPass">주문 비밀번호</label>
+                        <input type="password" required placeholder="주문비밀번호  
+                         "id="orderPass" />
+                    </p>            
+                    <button style="border:5px solid red" type="submit">확인</button>
+                </fieldset>                
+            </form>
+            <!--//비회원주문화인 로그인 폼시작-->            
+                                    
+         </div>
+         </div>
+         
+		</div>      
+<!--//로그인끝-->
+
+
+	<!-- 헤더시작 -->
+      <header>
+        <h1><a href="/" onClick="home(); return false"><img src="images/logo_starbuks.jpg" alt="스타벅스로고"/></a></h1>
+       <h2 id="iconMenu">메인메뉴</h2>
+       <!--글로벌 네비게이션 시작-->
+       <nav>
+           <ul id="mainMenu">
+               <li><a href="#">커피</a>
+                   <ul class="submenu">
+                       <li><a href="#">아메리카노</a></li>
+                       <li><a href="#">콜드브루</a></li>
+                       <li><a href="#">브루드커피</a></li>
+                       <li><a href="#">에스프레소</a></li>
+                       <li><a href="#">프라푸치노</a></li>
+                       <li><a href="#">블렌디드</a></li>
+                   </ul>
+               </li>
+               <li><a href="#">극장</a>
+                   <ul class="submenu">
+                       <li><a href="#">무비챠트</a></li>
+                       <li><a href="#">아트하우스</a></li>
+                       <li><a href="#">ICE CORN</a></li>
+                   </ul>           
+               </li>
+               <li><a href="#">예매</a>
+                   <ul class="submenu">
+                       <li><a href="#">무비챠트</a></li>
+                       <li><a href="#">아트하우스</a></li>
+                       <li><a href="#">ICE CORN</a></li>
+                   </ul>           
+               </li>
+               <li><a href="#">스토어</a>
+                   <ul class="submenu">
+                       <li><a href="#">무비챠트</a></li>
+                       <li><a href="#">아트하우스</a></li>
+                       <li><a href="#">ICE CORN</a></li>
+                   </ul>           
+               </li>
+               <li><a href="#">이벤트</a>
+                   <ul class="submenu">
+                       <li><a href="#">무비챠트</a></li>
+                       <li><a href="#">아트하우스</a></li>
+                       <li><a href="#">ICE CORN</a></li>
+                   </ul>           
+               </li>
+               <li><a href="#">혜택</a>
+                   <ul class="submenu">
+                       <li><a href="#">무비챠트</a></li>
+                       <li><a href="#">아트하우스</a></li>
+                       <li><a href="#">ICE CORN</a></li>
+                   </ul>           
+               </li>
+           </ul>
+       </nav>
+       <!--//글로벌 네비게이션 종료-->       
+       
+       <!--보조메뉴 -->
+        <ul id="infoMenu">
+            <li><button onClick="show()" value="로그인" id="log">로그인</button></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">MY CGV</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>         
+		
+      </header>
+	<!-- //헤더종료 -->
+
+	<!-- 콘텐츠시작 -->
+       <div id="contents">
+       
+	    <!-- 23.7.27목요일 비회원주문내역 추가 -->
+		<div id="guestPage">
+		   <h3>비회원 주문내역</h3>	
+            <p> 주문한 상품주문번호는 <span>no1</span>입니다 </br>
+                주문한 상품은 <img src="images/americano.jpg" alt="아메리카노" />
+              </p>  
+		</div>    
+		<!-- //23.7.27목요일 비회원주문내역 추가 -->       
+
+      
+		<!-- 23.7.20목요일 이머니카드 추가 -->
+		<div id="mypage">
+		   <h3>회원님 이머니카드</h3>
+		   <button class="emoney" onClick="coffeeMachine(5000)">5000원</button>
+		   <p><span>5000</span> 카드를 사용하면 5000원이 사용됩니다.</p>  
+		</div>    
+		<!-- //23.7.20목요일 이머니카드 추가 -->
+      
+      
+		  <!-- 메인이미지 -->
+		  <section id="mainImage">
+				<div id="slideWrap"><!-- 동영상 또는 이미지를 가운데 정렬하기위해 필요 -->
+					<!--유튜브에 올려놓은 영상소스를 퍼오기해서 사용-->
+					<!--<iframe width="800" height="400" src="https://www.youtube.com/embed/dl1IkOkPblw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>	-->	
+                   <p id="slide"><!--가로크기6000px 세로400px-->
+                      <img src="images/main01.jpg" alt=" " />
+                      <img src="images/main02.jpg" alt=" " />
+                      <img src="images/main03.jpg" alt=" " />
+                      <img src="images/main04.jpg" alt=" " />
+                      <img src="images/main05.jpg" alt=" " />
+                   </p>
+                   <ul class="control">
+                       <li><a href="images/main01.jpg" id="one" class="on" >1</a></li>
+                       <li><a href="images/main02.jpg" id="two" >2</a></li>
+                       <li><a href="images/main03.jpg" id="three" >3</a></li>
+                       <li><a href="images/main04.jpg" id="four" >4</a></li>
+                       <li><a href="images/main05.jpg" id="five" >5</a></li>
+                   </ul>                      
+                    
+                    
+				</div>
+		  </section>
+
+           
+            <!--히트상품 시작-->
+            <div id="hit">
+                  <!-- 히트상품-->
+                  <section class="hit">
+                     <!-- 상품미리보기영역 -->
+                      <div class="product">
+                           <p class="img"> <img src="images/americano.jpg" alt="아메리카노" /></p>
+                           <div>    
+                               <h2> 아메리카노</h2>
+                               <h3>Nitro Vanilla Cream</h3>  <!-- class="clear"삭제 -->
+                               <p class="txt">부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
+                           </div>
+                           <button class="order" onClick="show()">주문하기</button> 
+                      </div>
+                  </section>
+                  <section class="hit">
+                     <!-- 상품미리보기영역 -->
+                      <div class="product">
+                           <p class="img"> <img src="images/americano.jpg" alt="아메리카노" /></p>
+                           <div>    
+                               <h2> 아메리카노</h2>
+                               <h3>Nitro Vanilla Cream</h3>  <!-- class="clear"삭제 -->
+                               <p class="txt">부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
+                           </div>
+                           <button class="order" onClick="show()">주문하기</button> 
+                      </div>
+                  </section>
+                  <section class="hit">
+                     <!-- 상품미리보기영역 -->
+                      <div class="product">
+                           <p class="img"> <img src="images/americano.jpg" alt="아메리카노" /></p>
+                           <div>    
+                               <h2> 아메리카노</h2>
+                               <h3>Nitro Vanilla Cream</h3>  <!-- class="clear"삭제 -->
+                               <p class="txt">부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
+                           </div>
+                           <button class="order" onClick="show()">주문하기</button> 
+                      </div>
+                  </section>                                    
+                  <!-- //히트상품종료 -->                
+                   <!-- 상품더보기-->
+                <button class="more">+</button>
+                <div id="new"></div>
+            </div>
+            <!--//히트상품 종료-->
+            
+      
+		  <!-- 상품미리보기, 게시판, 배너를 감싼 영역시작 -->
+		  <div id="sectionWrap">
+
+			  <!-- 베스트상품미리보기 -->
+			  <section id="best">
+				 <!-- 상품미리보기영역 -->
+				  <div class="product">
+					   <p class="img"> <img src="images/americano.jpg" alt="아메리카노" /></p>
+					   <div>    
+						   <h2> 아메리카노</h2>
+						   <h3>Nitro Vanilla Cream</h3>  <!-- class="clear"삭제 -->
+						   <p class="txt">부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!</p>
+					   </div>
+					   <button class="order" onClick="show()">주문하기</button> 
+				  </div>
+			  </section>
+			  <!-- //베스트상품미리보기종료 -->
+
+			  <!-- 게시판시작 -->
+			  <section id="board">
+				 <!-- 게시판영역 -->
+					  <div id="boardBox">
+						   <dl id="news">
+								<dt id="tab01">공지사항</dt>
+								<dd>
+									<p><a href="#">지소연, 간절+자신 "황금세대의 마지막.. 10년 전보</a></p>
+									<p><a href="#">충남아산, '콜롬비아 출신' 아폰자 영입... "팀 공경력 강화"[공식발표]</a></p>
+									<p><a href="#">'오심'에 운 U-17 변성환 감독 "일본과 복수전 원해, 경기 운영 아쉬웠다"</a></p>
+									<p><a href="#">'생일 축하해 청용 리!' 볼튼과 팰리스, 35번째 생일 맞은 이청용 '깜짝 축하'</a></p>
+									<p><a href="#">"간절했다" 부상투혼에도 고개 숙인 '광주 에이스'</a></p>            
+								</dd>               
+							</dl>
+
+						   <dl id="board">
+								<dt id="tab02">자유게시판</dt>
+								<dd>
+									<p><a href="#">'세계 최정상 비보이' 김헌우, 'AG 전초전' 亞 브레이킹 선수권 우승</a></p>
+									<p><a href="#">'캘린더 그랜드슬램' 노리는 조코비치, 윔블던 1R서 68위 카친과 격돌</a></p>
+									<p><a href="#">악천후에 '고전'..높이뛰기 우상혁, 2ｍ16 세 번 시도 모두 실패</a></p>
+									<p><a href="#">'악천+기록 X' 우상혁, 시즌 최악의 경기력..亞선수권에서 회복한다</a></p>
+									<p><a href="#">대한하키협회, 중국 남자 국가대표 초청 합동 훈련</a></p>            
+								</dd>
+							</dl>        
+						</div>
+			  </section>
+			  <!-- //게시판종료 -->
+
+			  <!-- 배너이미지시작 -->
+			  <section id="banner">
+				  <div>
+					<img src="images/ban_with_starbuks.JPG" alt="" />
+				  </div>
+			  </section>
+			  <!-- //배너이미지종료 -->
+
+		  </div>
+		  <!-- //상품미리보기, 게시판, 배너를 감싼 영역종료 -->
+		   
+       </div>
+ 	<!-- //콘텐츠종료 -->     
+       
+	   <footer>
+			Copyright ©coffeeShop  Corp. All rights reserved.
+	   </footer>
+	  
+</div><!-- //전체영역종료 -->
+<script src="./script/menu.js"></script>
+</body>
+</html>

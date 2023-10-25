@@ -1,0 +1,160 @@
+/*로그인스타일*/
+div#loginWrap input {
+  display: block;
+  width: 94%;
+  font-size: 16px;
+  color: darkcyan;
+  padding: 12px 10px 12px 10px;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin-bottom: 7px;
+  border: 1px solid lightGray;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+div#loginWrap button {
+  /*로그인영역 버튼스타일*/
+  display: block;
+  padding-top: 13px;
+  width: 94%;
+  padding-bottom: 13px;
+  background-color: mediumblue;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+/* 7.20목 이머니카드 스타일추가 */
+button.emoney {
+  /*이머니카드 공통스타일*/
+  width: 200px;
+  height: 120px;
+  border: 0;
+  background-image: url(../images/emoney.jpg);
+  background-size: 200px 120px;
+  text-indent: -9999px;
+}
+
+/*로그인제목*/
+div#loginWrap h2 {
+  padding: 10px 10px 10px 10px;
+}
+
+/*mypage숨김*/
+div#mypage {
+  width: 300px;
+  height: 200px;
+  border: 10px solid red;
+  display: none;
+}
+/*guestPage숨김*/
+div#guestPage {
+  width: 700px;
+  height: 500px;
+  border: 10px solid red;
+  display: none;
+}
+
+/*회원로그인영역, 비회원주문확인영역*/
+div#loginWrap {
+  display: none; /*로그인영역 숨김처리*/
+  position: absolute;
+  left: 480px;
+  top: 200px;
+  border: 1px solid red;
+}
+/*회원로그인 비회원주문로그인을 감싼 모서리가 둥근div*/
+div#modalWrap {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 400px;
+  height: 250px;
+  z-index: 11;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+div#loginWrap div#bg {
+  background-color: black;
+  position: fixed;
+  left: 0;
+  top: 0; /*브라우저 좌측상단*/
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0.7; /*반투명*/
+} /*반투명용div*/
+
+/*회원로그인과 비회원주문로그인영역*/
+div#loginWrap div#memberLogin,
+div#loginWrap div#guestLogin {
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  width: 370px;
+  height: 180px;
+  border: 0px solid red;
+}
+/*탭메뉴*/
+div#loginWrap div h3 {
+  position: absolute;
+  top: -40px;
+  width: 175px;
+}
+div#loginWrap div h3#tab01 {
+  /*회원탭*/
+  left: 10px;
+  border-top: 1px solid blue;
+  border-left: 1px solid blue;
+  border-right: 1px solid blue;
+}
+div#loginWrap div h3#tab02 {
+  /*비회원주문확인탭*/
+  border-bottom: 1px solid blue;
+  background-color: lightgray;
+}
+div#loginWrap div h3#tab02 a {
+  color: black;
+  font-weight: normal;
+}
+h3 a {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+} /*접근성*/
+div#loginWrap div p.userId {
+  margin-top: 10px;
+}
+div#loginWrap div p label {
+  display: block;
+  text-indent: -9999px;
+  width: 0;
+  height: 0;
+  border: 0px solid red;
+}
+
+/*로그인영역*/
+
+/*회원로그인영역*/
+div#memberLogin {
+  /*background-color: aqua;*/
+  z-index: 30;
+}
+
+/*비회원주문확인영역*/
+div#guestLogin {
+  /*background-color: crimson; */
+  z-index: 20;
+}
+/*탭메뉴:비회원주문확인*/
+h3#tab02 {
+  left: 185px; /*background-color: crimson*/
+}

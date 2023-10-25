@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>슬라이드쇼</title>
+    <script src="script/jquery-3.7.0.min.js"></script>
+    <script>
+      $(function () {
+        function slideShow() {
+          let divWrap = $("div");
+          let coffee = divWrap.children("img");
+          let coffee1 = coffee.eq(0); //아메리카노
+          let coffee2 = coffee.eq(1); //아이스카페모카
+          coffee1.fadeOut().appendTo(divWrap); //아메리카노 페이드아웃
+          coffee2.fadeIn(); //아메리카노 페이드아웃
+        }
+        setInterval(slideShow, 1000);
+      });
+    </script>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        border: 10px solid blue;
+        position: relative;
+      }
+      div img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      img.none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="iceAmericano.jpg" alt="아이스아메리카노" />
+      <img src="iceCaffemocha.jpg" alt="아이스카페모카" class="none" />
+    </div>
+  </body>
+</html>
